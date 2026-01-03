@@ -2,7 +2,7 @@
 applications:
   - name: automation-aio
     memory: 2048M    
-    disk_quota: 10240M       # 硬盘给 1G (注意！ 硬盘大小要大于镜像大小)        
+    disk_quota: 2048M       # 硬盘给 1G (注意！ 硬盘大小要大于镜像大小)        
     random-route: true                
     docker:
       image: ghcr.io/workerspages/ubuntu-automation:aio
