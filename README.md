@@ -183,8 +183,8 @@ applications:
 
 ## 👥 开发者信息
 
-*   **维护者**: [您的名字/GitHub ID]
-*   **联系方式**: yessanjin@gmail.com
+*   **维护者**: https://github.com/workerspages
+*   **联系方式**: https://github.com/workerspages
 *   **版权所有**: © 2024-2026
 
 ---
