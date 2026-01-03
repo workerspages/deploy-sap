@@ -1,0 +1,10 @@
+---
+applications:
+  - name: automation-aio
+    memory: 2048M    
+    disk_quota: 512M               
+    random-route: true                
+    docker:
+      image: ghcr.io/workerspages/automation-aio:main-mariadb-20260103
+    env:
+      TZ: "Asia/Shanghai"           
