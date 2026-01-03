@@ -40,4 +40,12 @@ jobs:
           cf target -o "$CF_ORG" -s "$CF_SPACE"
 
       - name: Push App
+        id: cf_push
         run: cf push
+        
+      # === 新增以下步骤 ===
+      - name: Show App Logs on Failure
+        if: failure() # 只有上面的步骤失败时才执行
+        run: |
+          echo "Deployment failed. Fetching recent logs..."
+          cf logs automation-aio --recent
