@@ -1,0 +1,33 @@
+name: Deploy to SAP BTP
+
+on:
+  push:
+    branches: [ "main" ] # 当推送到 main 分支时触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # 如果你的应用需要先构建 Docker 镜像并推送，可以在这里加 Docker 步骤
+    # 如果只是单纯的 cf push (由 CF 构建)，则直接安装 CLI 即可
+
+    - name: Install Cloud Foundry CLI
+      run: |
+        wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+        echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+        sudo apt-get update
+        sudo apt-get install cf8-cli
+
+    - name: Login to SAP CF
+      run: |
+        cf api ${{ secrets.CF_API }}
+        cf auth "${{ secrets.CF_USERNAME }}" "${{ secrets.CF_PASSWORD }}"
+        cf target -o "${{ secrets.CF_ORG }}" -s "${{ secrets.CF_SPACE }}"
+
+    - name: Push App
+      # 这里对应你在本地执行的 cf push
+      # 如果你的 manifest.yml 在根目录，直接运行即可
+      run: cf push
