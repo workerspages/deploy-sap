@@ -2,9 +2,12 @@
 applications:
   - name: automation-aio
     memory: 2048M    
-    disk_quota: 512M               
+    disk_quota: 3072M               
     random-route: true                
     docker:
       image: ghcr.io/workerspages/automation-aio:main-mariadb-20260103
     env:
-      TZ: "Asia/Shanghai"           
+      TZ: "Asia/Shanghai"       
+      DISPLAY: :1
+      ENABLE_CLOUDFLARE_TUNNEL: false
+      CLOUDFLARE_TUNNEL_TOKEN: 
