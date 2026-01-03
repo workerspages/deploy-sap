@@ -1,10 +1,10 @@
 ---
 applications:
-  - name: automation-aio
+  - name: vaultwarden-rclone
     memory: 2048M    
     disk_quota: 512M               
     random-route: true                
     docker:
-      image: ghcr.io/workerspages/automation-aio:main-mariadb-20260103
+      image: ghcr.io/workerspages/vaultwarden-rclone:panel-2fa
     env:
       TZ: "Asia/Shanghai"           
