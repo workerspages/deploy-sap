@@ -57,8 +57,8 @@
 
 | 变量名 (Name) | 值 (Value) 示例 | 说明 |
 | :--- | :--- | :--- |
-| `CF_API` | `https://api.cf.ap21.hana.ondemand.com` | SAP BTP 的 API 端点地址 |
-| `CF_ORG` | `971b8fc5trial_sg-fjdz0fqx` | 您的 Org (组织) 名称 |
+| `CF_API` | `https://api.cf.ap21.hana.ondemand.com` | API Endpoint |
+| `CF_ORG` | `971b8fc5trial_sg-fjdz0fqx` | Org Name |
 | `CF_SPACE` | `dev` | 您的 Space (空间) 名称，通常是 dev |
 | `CF_USERNAME` | `your_email@gmail.com` | 您的 SAP 登录邮箱 |
 | `CF_PASSWORD` | `******` | **您的 SAP 登录密码** (注意：不是 SSO 验证码) |
