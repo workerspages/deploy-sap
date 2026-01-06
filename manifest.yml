@@ -1,13 +1,13 @@
 ---
 applications:
-  - name: automation-aio
+  - name: github-actions
     memory: 2048M    
-    disk_quota: 2048M       # 硬盘给 1G (注意！ 硬盘大小要大于镜像大小)        
+    disk_quota: 4096M       # 硬盘给 1G (注意！ 硬盘大小要大于镜像大小)        
     random-route: true                
     docker:
-      image: ghcr.io/workerspages/ubuntu-automation:aio
+      image: ghcr.io/workerspages/github-actions:github-actions-mariadb
     env:
       TZ: "Asia/Shanghai"       
-      DISPLAY: :1
-      ENABLE_CLOUDFLARE_TUNNEL: false
-      CLOUDFLARE_TUNNEL_TOKEN: 
+      ADMIN_USER: "admin"
+      ADMIN_PASSWORD: "admin"
+      JWT_SECRET: "your_secret_key_change_me"
