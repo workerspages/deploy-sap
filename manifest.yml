@@ -1,0 +1,13 @@
+---
+applications:
+  - name: qbittorrent-rclone
+    memory: 2048M    
+    disk_quota: 4096M       # 硬盘给 1G (注意！ 硬盘大小要大于镜像大小)        
+    random-route: true                
+    docker:
+      image: ghcr.io/workerspages/qbittorrent-rclone:latest
+    env:
+      TZ: "Asia/Shanghai"       
+      ADMIN_USER: "admin"
+      ADMIN_PASSWORD: "admin"
+      JWT_SECRET: "twins-dingbat-cushy"
