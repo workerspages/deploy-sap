@@ -7,10 +7,4 @@ applications:
     docker:
       image: ghcr.io/workerspages/alist-rclone:main
     env:
-      TZ: "Asia/Shanghai"       
-
-      # 将整个 data 目录打包成 tar.gz 并进行 Base64 编码后的单行字符串填入下方
-   #  DATA_DIR_BASE64: "在此处填入完整的Base64编码字符串"
-      
-    # 最终完整启动命令：创建数据目录 -> 还原配置和定时任务文件 -> 启动应用主进程
- #  command: "sh -c 'mkdir -p /data/rclone /opt/alist/data/rclone && printenv RCLONE_CONF_BASE64 | base64 -d > /data/rclone/rclone.conf && printenv SCHEDULED_TASKS_BASE64 | base64 -d > /data/rclone/scheduled-tasks.json && cp -r /data/rclone/* /opt/alist/data/rclone/ 2>/dev/null || true && exec /usr/bin/supervisord -n -c /etc/supervisord.conf'"
+      TZ: "Asia/Shanghai" 
