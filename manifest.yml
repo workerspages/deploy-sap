@@ -1,10 +1,11 @@
 ---
 applications:
-  - name: alist-rclone
+  - name: n8n
     memory: 2048M    
     disk_quota: 4096M       # 硬盘给 1G (注意！ 硬盘大小要大于镜像大小)        
     random-route: true                
     docker:
-      image: ghcr.io/workerspages/alist-rclone:latest
+      image: blowsnow/n8n-chinese
     env:
       TZ: "Asia/Shanghai" 
+      N8N_SECURE_COOKIE: "false"
