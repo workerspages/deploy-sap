@@ -2,7 +2,7 @@
 applications:
   - name: n8n
     memory: 1024M    
-    disk_quota: 4096M
+    disk_quota: 1024M
     random-route: true                
     docker:
       image: blowsnow/n8n-chinese:latest
