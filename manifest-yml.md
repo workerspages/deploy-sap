@@ -1,3 +1,6 @@
+### github-actions
+
+```yaml
 ---
 applications:
   - name: github-actions
@@ -11,3 +14,20 @@ applications:
       ADMIN_USER: "admin"
       ADMIN_PASSWORD: "admin"
       JWT_SECRET: "your_secret_key_change_me"
+```
+---
+### alist-rclone
+
+```yaml
+---
+---
+applications:
+  - name: alist-rclone
+    memory: 2048M    
+    disk_quota: 4096M       # 硬盘给 1G (注意！ 硬盘大小要大于镜像大小)        
+    random-route: true                
+    docker:
+      image: ghcr.io/workerspages/alist-rclone:latest
+    env:
+      TZ: "Asia/Shanghai" 
+```
