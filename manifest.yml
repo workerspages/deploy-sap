@@ -1,11 +1,10 @@
 ---
 applications:
-  - name: n8n
-    memory: 1024M    
-    disk_quota: 4096M
+  - name: alist-rclone
+    memory: 4096M    
+    disk_quota: 8192M       # 硬盘给 1G (注意！ 硬盘大小要大于镜像大小)        
     random-route: true                
     docker:
-      image: n8nio/n8n:latest
+      image: ghcr.io/workerspages/alist-rclone:warp-socks
     env:
       TZ: "Asia/Shanghai" 
-      N8N_SECURE_COOKIE: "false"
