@@ -20,7 +20,6 @@ applications:
 
 ```yaml
 ---
----
 applications:
   - name: alist-rclone
     memory: 2048M    
@@ -31,3 +30,22 @@ applications:
     env:
       TZ: "Asia/Shanghai" 
 ```
+---
+
+
+### n8n
+
+```yaml
+---
+applications:
+  - name: n8n
+    memory: 2048M    
+    disk_quota: 4096M
+    random-route: true                
+    docker:
+      image: blowsnow/n8n-chinese:latest
+    env:
+      TZ: "Asia/Shanghai" 
+      N8N_SECURE_COOKIE: "false"
+```
+---
