@@ -5,7 +5,7 @@ applications:
     disk_quota: 1024M
     random-route: true                
     docker:
-      image: blowsnow/n8n-chinese:latest
+      image: n8nio/n8n:latest
     env:
       TZ: "Asia/Shanghai" 
       N8N_SECURE_COOKIE: "false"
