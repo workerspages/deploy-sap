@@ -8,3 +8,4 @@ applications:
       image: ghcr.io/workerspages/alist-rclone:main
     env:
       TZ: "Asia/Shanghai" 
+      SYNC_INTERVAL: "9999999999" 
