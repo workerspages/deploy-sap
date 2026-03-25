@@ -5,6 +5,6 @@ applications:
     disk_quota: 8192M       # 硬盘给 1G (注意！ 硬盘大小要大于镜像大小)        
     random-route: true                
     docker:
-      image: ghcr.io/workerspages/alist-rclone:warp-socks
+      image: ghcr.io/workerspages/alist-rclone:main
     env:
       TZ: "Asia/Shanghai" 
