@@ -8,4 +8,4 @@ applications:
       image: ghcr.io/workerspages/automation:latest
     env:
       TZ: "Asia/Shanghai" 
-      DISPLAY: "1" 
+      DISPLAY: ":1" 
