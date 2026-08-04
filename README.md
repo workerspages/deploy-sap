@@ -1,7 +1,7 @@
 
 # 🚀 Automation AIO - SAP BTP 部署项目
 
-[![Deploy to SAP BTP](https://github.com/username/repo/actions/workflows/sap-deploy.yml/badge.svg)](https://github.com/username/repo/actions)
+[Deploy to SAP BTP](https://account.hanatrial.ondemand.com/)
 
 欢迎来到 **Automation AIO** 项目！这是一个专为 **SAP Business Technology Platform (BTP)** Cloud Foundry 环境构建的应用程序。
 
