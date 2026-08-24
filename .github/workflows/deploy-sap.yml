@@ -11,7 +11,7 @@ on:
 
   # 如果你想彻底禁止自动部署，请将下方的 push 部分删除或注释掉
   # push:
-  #   branches: [ "main" ]
+  #    branches: [ "main" ]
 
 jobs:
   deploy-to-sap:
@@ -39,6 +39,15 @@ jobs:
           cf auth "$CF_USER" "$CF_PASS"
           cf target -o "$CF_ORG" -s "$CF_SPACE"
 
+      # 👇 增加的新功能：在部署前停止应用
+      - name: Stop application on SAP before deploying
+        run: |
+          # 从 manifest.yml 中提取 "- name: " 后面的应用名
+          APP_NAME=$(grep -m 1 'name:' manifest.yml | awk '{print $3}')
+          echo "APP_NAME=$APP_NAME" >> $GITHUB_ENV
+          echo "准备停止应用: $APP_NAME"
+          cf stop $APP_NAME || true
+        
       - name: Push App
         id: cf_push
         run: cf push
@@ -48,4 +57,4 @@ jobs:
         if: failure() # 只有上面的步骤失败时才执行
         run: |
           echo "Deployment failed. Fetching recent logs..."
-          cf logs automation-aio --recent
+          cf logs ${{ env.APP_NAME }} --recent
