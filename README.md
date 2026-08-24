@@ -3,7 +3,7 @@
 
 [Deploy to SAP BTP](https://account.hanatrial.ondemand.com/)
 
-欢迎来到 **Automation AIO** 项目！这是一个专为 **SAP Business Technology Platform (BTP)** Cloud Foundry 环境构建的应用程序。
+这是一个专为 **SAP Business Technology Platform (BTP)** Cloud Foundry 环境构建的应用程序。
 
 本项目已集成 **CI/CD 自动化部署流程**，利用 GitHub Actions 解决本地网络连接 SAP 服务器不稳定（如 `EOF` 错误、代理配置繁琐）的问题，实现代码推送即自动上线。
 
