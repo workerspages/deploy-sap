@@ -10,5 +10,5 @@ applications:
       AUTH_TOKEN_EXPIRY: "87600"
     command: |
       export CF_PORT=$PORT
-      export PORT=1180
+      export PORT=8888
       bash -c '( while [ ! -f /etc/nginx/conf.d/default.conf ]; do sleep 0.2; done; sed -i "s/listen 80;/listen $CF_PORT;/" /etc/nginx/conf.d/default.conf ) & exec /app/start.sh'
