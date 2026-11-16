@@ -22,10 +22,9 @@ jobs:
 
       - name: Install Cloud Foundry CLI
         run: |
-          wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
-          echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
-          sudo apt-get update
-          sudo apt-get install cf8-cli
+          curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=v8&source=github" | tar -zx
+          sudo mv cf cf8 /usr/local/bin/
+          cf version
 
       - name: Login to SAP BTP
         env:
@@ -47,14 +46,14 @@ jobs:
           echo "APP_NAME=$APP_NAME" >> $GITHUB_ENV
           echo "准备停止应用: $APP_NAME"
           cf stop $APP_NAME || true
-        
+
       - name: Push App
         id: cf_push
         run: cf push
-        
+
       # === 新增以下步骤 ===
       - name: Show App Logs on Failure
-        if: failure() # 只有上面的步骤失败时才执行
+        if: failure() && env.APP_NAME != ''
         run: |
           echo "Deployment failed. Fetching recent logs..."
-          cf logs ${{ env.APP_NAME }} --recent
+          cf logs ${{ env.APP_NAME }} --recent || true
